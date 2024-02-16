@@ -1,52 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <img
+        src="./assets/images/illustration-sign-up-mobile.svg"
+        alt="sign-up-illustration"
+      />
+      <!-- Sign-up form start -->
+      <section class="container">
+        <h1>Stay updated!</h1>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+        <article>
+          <ul class="list-container">
+            <div>
+              <img src="./assets/images/icon-list.svg" alt="icon-list" />
+              <p class="list">Product discovery and building what matters</p>
+            </div>
+            <div>
+              <img src="./assets/images/icon-list.svg" alt="icon-list" />
+              <p class="list">Measuring to ensure updates are a success</p>
+            </div>
+            <div>
+              <img src="./assets/images/icon-list.svg" alt="icon-list" />
+              <p class="list">And much more!</p>
+            </div>
+          </ul>
+        </article>
+        <form class="form">
+          <label>Email address </label>
+          <input
+            class="input-padding"
+            required
+            type="email"
+            placeholder="email@company.com"
+          />
+          <button class="input-padding" type="submit">
+            Subscribe to monthly newsletter
+          </button>
+        </form>
+      </section>
+    </section>
 
-  <!-- Sign-up form start -->
+    <!-- Sign-up form end -->
 
-  Stay updated!
+    <!-- Success message start -->
+    <section style="display: none">
+      <div>image</div>
+      <h1>Thanks for subscribing!</h1>
+      <p>
+        A confirmation email has been sent to ash@loremcompany.com. Please open
+        it and click the button inside to confirm your subscription.
+      </p>
+      <button>Dismiss message</button>
+    </section>
 
-  Join 60,000+ product managers receiving monthly updates on:
+    <!-- Success message end -->
 
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
-
-  Email address
-  email@company.com
-
-  Subscribe to monthly newsletter
-
-  <!-- Sign-up form end -->
-
-  <!-- Success message start -->
-
-  Thanks for subscribing!
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message
-
-  <!-- Success message end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Kamsiyonna</a>.
+    </div>
+  </body>
 </html>

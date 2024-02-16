@@ -1,0 +1,50 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 32px 0 0;
+}
+.container {
+  padding: 0 24px;
+}
+.container > p {
+  margin: 24px 0 28px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 28px 0;
+}
+
+.form > label {
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.form > input {
+  margin-bottom: 20px;
+}
+
+.input-padding {
+  padding: 18px 24px;
+  border-radius: 8px;
+  font-size: medium;
+}
+.list-container {
+  padding: 0;
+}
+
+.list-container > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.list {
+  margin: 0 0 20px;
+}
