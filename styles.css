@@ -1,13 +1,74 @@
+/* - Dark Slate Grey: hsl(234, 29%, 20%)
+- Charcoal Grey: hsl(235, 18%, 26%)
+- Grey: hsl(231, 7%, 60%)
+- Tomato: hsl(4, 100%, 67%)
+- White: hsl(0, 0%, 100%) */
+
+:root {
+  --primary: hsl(4, 100%, 67%);
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+}
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
+  background-color: var(--dark-slate-grey);
+  color: var(--charcoal-grey);
   margin: 0;
 }
 
 h1 {
   font-size: 40px;
   margin: 32px 0 0;
+  color: var(--dark-slate-grey);
 }
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: var(--white);
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid #888;
+  max-width: 375px;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  right: 0;
+  left: 98%;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sign-up-illustration-desktop {
+  display: none;
+}
+
 .container {
   padding: 0 24px;
 }
@@ -20,7 +81,8 @@ h1 {
   margin: 28px 0;
 }
 
-.form > label {
+.input-labels > label,
+.error-message {
   font-weight: 700;
   font-size: 12px;
   margin-bottom: 10px;
@@ -28,12 +90,42 @@ h1 {
 
 .form > input {
   margin-bottom: 20px;
+  border: 1px solid var(--grey);
+  ::placeholder {
+    color: var(--grey);
+  }
 }
-
+input:focus {
+  outline-color: var(--grey);
+}
 .input-padding {
   padding: 18px 24px;
   border-radius: 8px;
   font-size: medium;
+}
+
+.input-labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+#success-message {
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#success-message > div {
+  padding-top: 64px;
+}
+
+#success-message > button {
+  margin-bottom: 40px;
+}
+.error-message {
+  display: none;
+  margin: 0;
+  color: var(--primary);
 }
 .list-container {
   padding: 0;
@@ -47,4 +139,67 @@ h1 {
 
 .list {
   margin: 0 0 20px;
+}
+
+.button {
+  border: none;
+  cursor: pointer;
+  background-color: var(--dark-slate-grey);
+  color: var(--white);
+}
+
+.button:hover {
+  background-color: var(--primary);
+}
+
+/* Add this media query for large devices */
+@media only screen and (min-width: 768px) {
+  .modal {
+    align-items: center;
+  }
+  .modal-content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    max-width: fit-content;
+    padding: 20px;
+    border-radius: 32px;
+  }
+
+  h1 {
+    font-size: 56px;
+    margin: 0;
+  }
+
+  .container {
+    max-width: 400px;
+    padding: 0 32px;
+  }
+
+  .sign-up-illustration-desktop {
+    display: block;
+  }
+
+  .sign-up-illustration-mobile {
+    display: none;
+  }
+
+  .form {
+    flex: 1; /* Take up remaining space */
+  }
+
+  #success-message > div {
+    padding-top: 32px;
+  }
+  #success-message > div > img,
+  #success-message > div > p,
+  #success-message > div > h1 {
+    margin-bottom: 12px;
+  }
+
+  #success-message > button {
+    margin-top: 12px;
+    margin-bottom: 32px;
+  }
 }
