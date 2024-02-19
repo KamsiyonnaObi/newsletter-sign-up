@@ -36,7 +36,8 @@ window.onclick = function (event) {
   }
 };
 
-subscribeButton.addEventListener("click", function () {
+subscribeButton.addEventListener("click", function (event) {
+  event.preventDefault();
   const email = emailInput.value.trim();
   modal.style.display = "flex";
   if (!isValidEmail(email)) {
