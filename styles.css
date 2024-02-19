@@ -6,6 +6,7 @@
 
 :root {
   --primary: hsl(4, 100%, 67%);
+  --primary-light: hsla(4, 100%, 76%, 0.895);
   --dark-slate-grey: hsl(234, 29%, 20%);
   --charcoal-grey: hsl(235, 18%, 26%);
   --grey: hsl(231, 7%, 60%);
@@ -97,6 +98,14 @@ h1 {
 }
 input:focus {
   outline-color: var(--grey);
+}
+
+.invalid-email {
+  border: 1px solid var(--primary) !important;
+  background-color: var(--primary-light);
+  :placeholder {
+    color: var(--primary);
+  }
 }
 .input-padding {
   padding: 18px 24px;

@@ -1,5 +1,6 @@
 const emailInput = document.getElementById("emailInput");
 const errorMessage = document.getElementById("errorMessage");
+const dismissButton = document.getElementById("dismissButton");
 const subscribeButton = document.getElementById("subscribeButton");
 const successMessage = document.getElementById("success-message");
 const signUpForm = document.getElementById("sign-up");
@@ -16,6 +17,11 @@ var span = document.getElementsByClassName("close")[0];
 
 // var to track if email was successfully submitted.
 let isSubmitted = false;
+
+function closeModal() {
+  modal.style.display = "none";
+  isSubmitted = false; // Reset isSubmitted
+}
 // When the user clicks the button, open the modal
 btn.onclick = function () {
   modal.style.display = "flex";
@@ -23,16 +29,15 @@ btn.onclick = function () {
 };
 
 // When the user clicks on <span> (x), close the modal
-// span.onclick = function () {
-//   modal.style.display = "none";
-//   isSubmitted = false; // Reset isSubmitted
-// };
+dismissButton.onclick = function () {
+  closeModal();
+  resetModal();
+};
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
-    modal.style.display = "none";
-    isSubmitted = false; // Reset isSubmitted
+    closeModal();
   }
 };
 
@@ -43,6 +48,7 @@ subscribeButton.addEventListener("click", function (event) {
   if (!isValidEmail(email)) {
     errorMessage.innerText = "Valid email required";
     errorMessage.style.display = "block";
+    invalidInput();
   } else {
     errorMessage.style.display = "none"; // remove error message
     isSubmitted = true;
@@ -56,6 +62,10 @@ function isValidEmail(email) {
   return emailRegex.test(email);
 }
 
+function invalidInput() {
+  emailInput.classList.add("invalid-email");
+}
+
 // display success message if email is sucessfully submitted
 function isEmailSubmitted() {
   if (isSubmitted) {
@@ -67,4 +77,10 @@ function isEmailSubmitted() {
     signUpForm.style.display = "block";
     successMessage.style.display = "none";
   }
+}
+
+function resetModal() {
+  emailInput.classList.remove("invalid-email"); // remove error message
+  illustration.style.display = "block";
+  illustrationDesktop.style.display = "block";
 }
