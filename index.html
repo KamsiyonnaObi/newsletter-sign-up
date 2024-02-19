@@ -35,59 +35,87 @@
   </head>
   <body>
     <section>
-      <img
-        src="./assets/images/illustration-sign-up-mobile.svg"
-        alt="sign-up-illustration"
-      />
-      <!-- Sign-up form start -->
-      <section class="container">
-        <h1>Stay updated!</h1>
-        <p>Join 60,000+ product managers receiving monthly updates on:</p>
-        <article>
-          <ul class="list-container">
-            <div>
-              <img src="./assets/images/icon-list.svg" alt="icon-list" />
-              <p class="list">Product discovery and building what matters</p>
-            </div>
-            <div>
-              <img src="./assets/images/icon-list.svg" alt="icon-list" />
-              <p class="list">Measuring to ensure updates are a success</p>
-            </div>
-            <div>
-              <img src="./assets/images/icon-list.svg" alt="icon-list" />
-              <p class="list">And much more!</p>
-            </div>
-          </ul>
-        </article>
-        <form class="form">
-          <label>Email address </label>
-          <input
-            class="input-padding"
-            required
-            type="email"
-            placeholder="email@company.com"
+      <!-- Trigger/Open The Modal -->
+      <button id="myBtn">Open Modal</button>
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <!-- <span class="close">&times;</span> -->
+          <img
+            id="illustration"
+            class="sign-up-illustration-mobile"
+            src="./assets/images/illustration-sign-up-mobile.svg"
+            alt="sign-up-illustration"
           />
-          <button class="input-padding" type="submit">
-            Subscribe to monthly newsletter
-          </button>
-        </form>
-      </section>
+          <img
+            id="illustration-desktop"
+            class="sign-up-illustration-desktop"
+            src="./assets/images/illustration-sign-up-desktop.svg"
+            alt="sign-up-illustration"
+          />
+          <!-- Sign-up form start -->
+          <section id="sign-up" class="container">
+            <h1>Stay updated!</h1>
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
+            <article>
+              <ul class="list-container">
+                <div>
+                  <img src="./assets/images/icon-list.svg" alt="icon-list" />
+                  <p class="list">
+                    Product discovery and building what matters
+                  </p>
+                </div>
+                <div>
+                  <img src="./assets/images/icon-list.svg" alt="icon-list" />
+                  <p class="list">Measuring to ensure updates are a success</p>
+                </div>
+                <div>
+                  <img src="./assets/images/icon-list.svg" alt="icon-list" />
+                  <p class="list">And much more!</p>
+                </div>
+              </ul>
+            </article>
+            <form class="form">
+              <div class="input-labels">
+                <label for="emailInput">Email address </label>
+                <p id="errorMessage" class="error-message"></p>
+              </div>
+              <input
+                id="emailInput"
+                name="emailInput"
+                class="input-padding"
+                type="email"
+                placeholder="email@company.com"
+              />
+              <button id="subscribeButton" class="input-padding button">
+                Subscribe to monthly newsletter
+              </button>
+            </form>
+          </section>
+
+          <!-- Sign-up form end -->
+
+          <!-- Success message start -->
+          <section id="success-message" class="container">
+            <div>
+              <img src="./assets/images/icon-success.svg" alt="icon-success" />
+              <h1>Thanks for subscribing!</h1>
+              <p>
+                A confirmation email has been sent to
+                <strong>ash@loremcompany.com.</strong>
+                Please open it and click the button inside to confirm your
+                subscription.
+              </p>
+            </div>
+            <button class="input-padding button">Dismiss message</button>
+          </section>
+
+          <!-- Success message end -->
+        </div>
+      </div>
     </section>
-
-    <!-- Sign-up form end -->
-
-    <!-- Success message start -->
-    <section style="display: none">
-      <div>image</div>
-      <h1>Thanks for subscribing!</h1>
-      <p>
-        A confirmation email has been sent to ash@loremcompany.com. Please open
-        it and click the button inside to confirm your subscription.
-      </p>
-      <button>Dismiss message</button>
-    </section>
-
-    <!-- Success message end -->
 
     <div class="attribution">
       Challenge by
@@ -95,5 +123,6 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Kamsiyonna</a>.
     </div>
+    <script src="scripts.js"></script>
   </body>
 </html>
