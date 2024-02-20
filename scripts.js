@@ -81,6 +81,5 @@ function isEmailSubmitted() {
 
 function resetModal() {
   emailInput.classList.remove("invalid-email"); // remove error message
-  illustration.style.display = "block";
   illustrationDesktop.style.display = "block";
 }

@@ -28,7 +28,7 @@ h1 {
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
+  display: flex; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -119,6 +119,7 @@ input:focus {
 }
 
 #success-message {
+  display: none;
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
